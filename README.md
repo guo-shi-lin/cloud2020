@@ -7,3 +7,5 @@
 2.实现客户端负载均衡
 使用@LoadBalanced注解赋予RestTemplate负载均衡的能力
 通过微服务名称来调服务，负载均衡机制用的是默认的是轮询的方式。
+3.使用actuator实现健康监控。如果使用http调用的方法，需要和spring-boot-starter-web一起使用。
+4.服务发现Discovery

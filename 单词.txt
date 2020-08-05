@@ -1,0 +1,14 @@
+health健康
+Load Balanced负载均衡
+actuator执行机构
+eureka尤里卡
+drivers驱动程序
+repository仓库
+pull拉
+push推
+remote远程
+fetch取来
+clone克隆
+merge合并
+commit提交
+discovery发现
