@@ -21,8 +21,6 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-    @Value("${server.port}")
-    private String serverPort;
 
     @GetMapping("/payment/hystrix/ok/{id}")
     public String payment_OK(@PathVariable Integer id) {
@@ -36,5 +34,10 @@ public class PaymentController {
         String result = paymentService.paymentFeignTimeout(id);
         log.info("*****result：" + result);
         return result;
+    }
+
+    @GetMapping("/payment/hystrix/circuit/{id}")
+    public String paymentFusing(@PathVariable Integer id) {
+        return paymentService.paymentFusing(id);
     }
 }
