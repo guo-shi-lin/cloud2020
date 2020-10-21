@@ -15,8 +15,24 @@ spring:
       ####读取分支
       label: main
 
+#rabbitmq相关配置
+rabbitmq:
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
+
 #服务注册到eureka地址
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
+
+##rabbitmq相关配置，暴露bus刷新配置的端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
+        #curl -X POST "http://localhost:3344/actuator/bus-refresh"刷新一次全部可用
+        #curl -X POST "http://localhost:3344/actuator/bus-refresh/config-client:3355"指定一个客户端去刷新
